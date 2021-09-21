@@ -1,0 +1,294 @@
+
+/*
+ * ─── ROOT ───────────────────────────────────────────────────────────────────────
+ */
+
+    :root {
+        --sidebar-width:
+            230pt;
+        --content-top-margin:
+            4rem;
+    }
+
+/*
+ * ─── PAGE STRUCTURE ─────────────────────────────────────────────────────────────
+ */
+
+    .docs-page-container {
+        display:    flex;
+    }
+
+    .docs-page-container > article {
+        flex:       1;
+        width:      100vw;
+        height:     100vh;
+    }
+
+    .docs-page-container > aside {
+        right:          0;
+        flex:           auto;
+        max-width:      var( --sidebar-width );
+        min-width:      var( --sidebar-width );
+        padding:        calc( var( --content-top-margin ) + 1rem ) 4em 5rem 3rem;
+    }
+
+    .content-body {
+        --content-body-margin-right:
+            var( --sidebar-width );
+
+        max-width:      calc( 500pt  );
+        margin:         auto;
+        padding:        var( --content-top-margin ) 0 10rem 0;
+    }
+
+/*
+ * ─── TABLE OF CONTENTS ──────────────────────────────────────────────────────────
+ */
+
+    .table-of-contents-container {
+        --table-of-contents-top-padding:
+            0.7rem;
+        --table-of-contents-bottom-padding:
+            0.9rem;
+        --table-of-contents-h-padding:
+            1rem;
+        --table-of-contents-border-width:
+            0.1rem;
+        --table-of-contents-border-color:
+            var( --pro-colors-comment );
+
+        border:             var( --table-of-contents-border-width ) solid var( --table-of-contents-border-color ) !important;
+        border-radius:      1rem;
+    }
+
+    .table-of-contents-header {
+        padding:    var( --table-of-contents-top-padding ) var( --table-of-contents-h-padding ) var( --table-of-contents-bottom-padding ) var( --table-of-contents-h-padding );
+    }
+
+    .table-of-contents ol, li, ul {
+        list-style-type:        none;
+        list-style-position:    inside;
+        margin:                 0 0 0 0;
+        padding:                0;
+    }
+
+    .table-of-contents > ol > li {
+        padding:            var( --table-of-contents-top-padding ) var( --table-of-contents-h-padding ) var( --table-of-contents-bottom-padding ) var( --table-of-contents-h-padding );
+        border-top:         var( --table-of-contents-border-width ) solid var( --table-of-contents-border-color ) !important;
+        padding-bottom:     0.5rem;
+    }
+
+    .table-of-contents > ol > li li {
+        border-top:     var( --table-of-contents-border-width ) dotted var( --table-of-contents-border-color ) !important;
+        padding-top:    0.5rem;
+    }
+
+    .table-of-contents li a {
+        color:      var( --pro-colors-orange );
+    }
+
+    .table-of-contents li li a {
+        color:      var( --pro-colors-red );
+    }
+
+    .table-of-contents a {
+        text-decoration:    none;
+    }
+
+/*
+ * ─── BASICS ─────────────────────────────────────────────────────────────────────
+ */
+
+    * {
+        box-sizing:     border-box;
+    }
+
+    html {
+        font-size:      12pt;
+    }
+
+    body {
+        font-family:    Inter;
+        font-size:      1.05rem;
+        margin:         0;
+        padding:        0;
+        color:          var( --pro-colors-foreground );
+    }
+
+/*
+ * ─── HEADER ─────────────────────────────────────────────────────────────────────
+ */
+
+    h1 a, h2 a, h3 a, h4 a {
+        color:              inherit;
+        text-decoration:    none;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family:        'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-weight:        normal !important;
+        border-bottom:      0.1em solid transparent;
+        padding-bottom:     0.1em;
+        max-width:          fit-content;
+        margin:             0 0 0.3em 0;
+    }
+
+    h1:hover, h2:hover, h3:hover, h4:hover {
+        border-bottom-color:    inherit;
+        cursor:                 pointer;
+    }
+
+    .docs-page-container > article h1 {
+        padding-top:    0;
+        font-weight:    700;
+        color:          var( --pro-colors-blue );
+    }
+
+    .docs-page-container > article h2 {
+        margin-top:     4rem;
+        color:          var( --pro-colors-pink );
+    }
+
+    .docs-page-container > article h1 + h2 {
+        margin-top:     2rem;
+    }
+
+    .docs-page-container > article h3 {
+        margin-top:     2rem;
+        font-weight:    normal;
+        color:          #999;
+        font-size:      1.3rem;
+    }
+
+    .docs-page-container > article h2 + h3 {
+        margin-top:     1rem;
+    }
+
+/*
+ * ─── CODE ───────────────────────────────────────────────────────────────────────
+ */
+
+    .docs-page-container > article p code {
+        font-size:          1.05rem;
+        font-family:        "Source Code Pro", "JetBrains Mono";
+        border-radius:      0.4rem;
+        padding:            0 0.5rem;
+        color:              var( --pro-colors-orange );
+    }
+
+/*
+ * ─── PARAGRAPH ──────────────────────────────────────────────────────────────────
+ */
+
+    .docs-page-container > article p {
+        line-height:    1.6;
+        margin:         0;
+    }
+
+    .docs-page-container > article p a {
+        color:              var( --pro-colors-blue );
+        text-decoration:    none;
+        border-radius:      0.3rem;
+        padding:            0 0.2rem;
+    }
+
+    .docs-page-container > article p a:hover {
+        background-color:       var( --pro-colors-selection );
+    }
+
+/*
+ * ─── BLOCKQUOTE ─────────────────────────────────────────────────────────────────
+ */
+
+    .docs-page-container > article blockquote {
+        background-image:       url("/static/images/templates/note-icon.png");
+        background-repeat:      no-repeat;
+        background-position:    1rem center;
+        background-color:       #FFEA9D;
+        background-size:        4rem 4rem;
+        padding:                0.7rem 1rem 0.8rem 6rem;
+        border-radius:          0.5rem;
+        margin:                 1rem 0 1rem 0;
+    }
+
+/*
+ * ─── SIDEBAR ────────────────────────────────────────────────────────────────────
+ */
+
+    sidebar {
+        margin:     calc( var( --content-top-margin ) - 1.7rem ) 1rem 0 2rem;
+    }
+
+    sidebar > img {
+        margin:     auto;
+    }
+
+    .library-sidebar-title {
+        font-size:          1.3rem;
+        text-transform:     uppercase;
+        letter-spacing:     0.2em;
+        font-family:        'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    .library-sidebar-title-kary-word {
+        font-size:          1.7em;
+        letter-spacing:     0.4em;
+    }
+
+/*
+ * ─── DARK AND LIGHT MODELS ──────────────────────────────────────────────────────
+ */
+
+    @media (prefers-color-scheme: light) {
+            body {
+                background-color:       white;
+                color:                  black;
+            }
+
+            .docs-page-container > article p code {
+                color:                  #A56416;
+                background-color:       #FFF5D6;
+            }
+
+            .docs-page-container > article .two-langs > * {
+                flex:       auto;
+            }
+
+            .docs-page-container > article .two-langs > * + * {
+                margin-left:    1rem;
+            }
+    }
+
+    @media (prefers-color-scheme: dark) {
+            body {
+                background-color:       black;
+                color:                  white;
+            }
+
+            .docs-page-container > article p code {
+                background-color:       #1A1A1A;
+            }
+
+            .docs-page-container > article blockquote {
+                background-color:       #d7c0ad;
+                filter:                 invert(100%);
+            }
+
+            .docs-page-container > article blockquote > * {
+                filter:     invert(100%);
+            }
+
+            .two-langs > * + * + * + * {
+                margin-left:    2rem;
+            }
+
+            .docs-page-container > article h3 {
+                color:      #818181;
+            }
+
+            sidebar img {
+                filter:     invert(100%);
+            }
+    }
+
+/* ──────────────────────────────────────────────────────────────────────────────── */
